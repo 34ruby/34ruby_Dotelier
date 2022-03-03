@@ -40,10 +40,15 @@
                 $('.btn_word').hide();
             });
             $(document.body).delegate('.pixleColorSet', 'click', function() {
-                isMouseDown = true;
-                $(this).toggleclass("highlighted");
-                isHighlighted = $(this).hasClass("highlighted");
-                return false;
+                // console.log('d')
+                // isMouseDown = true;
+                // $(this).toggleclass("highlighted");
+                // isHighlighted = $(this).hasClass("highlighted");
+                // return false;
+
+                    $( this ).css( "background-color", "#f4f4f4" );
+                    $( this).children("td").css( "cursor", "pointer" );
+
             });
             let isMouseDown = false;
             $(".pixleColorSet").mousedown(function() {
