@@ -40,8 +40,10 @@
                 $('.btn_word').hide();
             });
             $(document.body).delegate('.pixleColorSet', 'click', function() {
-            console.log(num);
-            $('.btn_word').show();
+                isMouseDown = true;
+                $(this).toggleclass("highlighted");
+                isHighlighted = $(this).hasClass("highlighted");
+                return false;
             });
             let isMouseDown = false;
             $(".pixleColorSet").mousedown(function() {
