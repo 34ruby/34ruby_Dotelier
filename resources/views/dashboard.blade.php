@@ -22,8 +22,7 @@
                             <p> <center><h3><font size="20" color="black">Canvas </font></h3></center></p>
                             <div>
                                 <div id="board">
-                                    {{-- <div class="cell">
-                                    </div> --}}
+                                    {{-- <img src="{{URL::asset('/images/title.jpg')}}" width="100%"/> --}}
                                 </div>
                             </div>
                         </div>
@@ -40,36 +39,32 @@
                 $('.btn_word').hide();
             });
             $(document.body).delegate('.pixleColorSet', 'click', function() {
-                // console.log('d')
-                // isMouseDown = true;
-                // $(this).toggleclass("highlighted");
-                // isHighlighted = $(this).hasClass("highlighted");
-                // return false;
-
-                    $( this ).css( "background-color", "#f4f4f4" );
-                    $( this).children("td").css( "cursor", "pointer" );
-
+                console.log('d')
+                $('.pixleColorSet').toggleclass("highlighted");
+                console.log('d')
+            // $( this ).css( "background-color", "#f4f4f4" );
+            // $( this).children("td").css( "cursor", "pointer" );
             });
             let isMouseDown = false;
-            $(".pixleColorSet").mousedown(function() {
-                console.log('asdf')
-                isMouseDown = true;
-                $(this).toggleclass("highlighted");
-                isHighlighted = $(this).hasClass("highlighted");
-                return false;
-            })
-            .mouseover(function () {
-                if (isMouseDown) {
-                $(this).toggleClass("highlighted", isHighlighted);
-                }
-            })
-            .bind("selectstart", function () {
-            return false;
-            })
-            $(document)
-            .mouseup(function () {
-            isMouseDown = false;
-            });
+            // $(".pixleColorSet").mousedown(function() {
+            //     console.log('asdf')
+            //     isMouseDown = true;
+            //     $(this).toggleclass("highlighted");
+            //     isHighlighted = $(this).hasClass("highlighted");
+            //     return false;
+            // })
+            // .mouseover(function () {
+            //     if (isMouseDown) {
+            //     $(this).toggleClass("highlighted", isHighlighted);
+            //     }
+            // })
+            // .bind("selectstart", function () {
+            // return false;
+            // })
+            // $(document)
+            // .mouseup(function () {
+            // isMouseDown = false;
+            // });
         });
         let boardSize = 0;
         let createdCanvas = false;
@@ -87,7 +82,6 @@
                     createdCanvas = true;
                 }
             }
-
         }
 
         function printBoard(i_BoardSize) {
@@ -95,11 +89,12 @@
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
 
-            let myTable = $("<table id=\"our_table\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\"></table>").appendTo("#board");
+            let myTable = $("<table id=\"our_table\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
                 let myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {
-                    myRow.append("<td class=\"pixleColorSet\">" + num + "</td>");
+                    // myRow.append("<td class=\"pixleColorSet\">" + num + "</td>");
+                    myRow.append("<td class=\"pixleColorSet\"></td>");
                     num++;
                 }
             }
