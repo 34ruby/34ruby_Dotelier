@@ -9,9 +9,7 @@
         <div>
             <div>
                 <div>
-                        <button class="btn_show btn btn-primary">Button</button>
-                        <button class="btn_hide btn btn-primary">Button</button>
-                        <div class="btn_word">Hello world!!!</div>
+
                         <div class="form-control">
                             <div class="input-group">
                               <input type="number" min="10" max="20" placeholder="canvas size" id="canvasSize" class="input input-bordered" name="input">
@@ -23,6 +21,7 @@
                             <div>
                                 <div id="board">
                                     {{-- <img src="{{URL::asset('/images/title.jpg')}}" width="100%"/> --}}
+                                    <input type='text' id="preferredHex" />
                                 </div>
                             </div>
                         </div>
@@ -31,51 +30,40 @@
         </div>
     </div>
     <script>
+
         $(function(){
-            $('.btn_show').click(function(){
-                $('.btn_word').show();
+            $("#preferredHex").spectrum({
+                preferredFormat: "hex",
+                flat: true,
+                showInput: true,
+                showPalette: true,
+                palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]]
             });
-            $('.btn_hide').click(function(){
-                $('.btn_word').hide();
-            });
+            // let colorSet = '#000000'
+
+
             $(document.body).delegate('.pixleColorSet', 'click', function() {
-                console.log('d')
-                $('.pixleColorSet').toggleclass("highlighted");
-                console.log('d')
-            // $( this ).css( "background-color", "#f4f4f4" );
-            // $( this).children("td").css( "cursor", "pointer" );
+                colorSet = $('#preferredHex').val();
+                console.log(colorSet)
+            $( this ).css( "background-color", colorSet );
             });
             let isMouseDown = false;
-            // $(".pixleColorSet").mousedown(function() {
-            //     console.log('asdf')
-            //     isMouseDown = true;
-            //     $(this).toggleclass("highlighted");
-            //     isHighlighted = $(this).hasClass("highlighted");
-            //     return false;
-            // })
-            // .mouseover(function () {
-            //     if (isMouseDown) {
-            //     $(this).toggleClass("highlighted", isHighlighted);
-            //     }
-            // })
-            // .bind("selectstart", function () {
-            // return false;
-            // })
-            // $(document)
-            // .mouseup(function () {
-            // isMouseDown = false;
-            // });
         });
+        let colorSet = '';
         let boardSize = 0;
         let createdCanvas = false;
+
+        function getInputValue() {
+            colorSet = $('#preferredHex').val();
+        }
 
         function makeCanvas() { //on load
             if(createdCanvas == true) {
                 alert('이미 생성됨')
             } else {
                 boardSize = $('#canvasSize').val();
-                if(boardSize < 10 || boardSize > 20) {
-                    alert('사이즈 조절! 10 이상 20 이하로')
+                if(boardSize < 10 || boardSize > 40) {
+                    alert('사이즈 조절! 10 이상 40 이하로')
                 } else {
                     alert(boardSize +'*' +boardSize + ' 사이즈로 캔버스 생성!')
                     printBoard(boardSize);
@@ -94,7 +82,7 @@
                 let myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {
                     // myRow.append("<td class=\"pixleColorSet\">" + num + "</td>");
-                    myRow.append("<td class=\"pixleColorSet\"></td>");
+                    myRow.append("<td class=\"pixleColorSet\" onClick=\"getInputValue\"></td>");
                     num++;
                 }
             }

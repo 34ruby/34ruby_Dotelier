@@ -12,10 +12,17 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/spectrum.css') }}">
+        {{-- <link rel="stylesheet" href="spectrum.css"> --}}
         {{-- <link rel="stylesheet" href="{{ asset('css/dot.css') }}"> --}}
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+        <script src="{{ asset('js/spectrum.js') }}" defer></script>
+        {{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="dist/iris.js"></script> --}}
+
     </head>
     <body>
         <div >
