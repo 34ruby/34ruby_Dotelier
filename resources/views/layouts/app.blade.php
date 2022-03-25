@@ -13,6 +13,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/spectrum.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/table.css') }}"> --}}
         {{-- <link rel="stylesheet" href="spectrum.css"> --}}
         {{-- <link rel="stylesheet" href="{{ asset('css/dot.css') }}"> --}}
         <!-- Scripts -->

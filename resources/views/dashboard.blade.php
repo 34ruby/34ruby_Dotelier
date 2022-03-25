@@ -4,31 +4,22 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    <div>
-        <div>
-            <div>
-                <div>
-
-                        <div class="form-control">
-                            <div class="input-group">
-                              <input type="number" min="10" max="20" placeholder="canvas size" id="canvasSize" class="input input-bordered" name="input">
-                              <input type="button" onclick="makeCanvas();" value="getValue">
-                            </div>
-                        </div>
-                        <div class="dot_template">
-                            <p> <center><h3><font size="20" color="black">Canvas </font></h3></center></p>
-                            <div>
-                                <div id="board">
-                                    {{-- <img src="{{URL::asset('/images/title.jpg')}}" width="100%"/> --}}
-                                    <input type='text' id="preferredHex" />
-                                </div>
-                            </div>
-                        </div>
+    <div class="form-control">
+        <div class="input-group">
+            <input type="number" min="10" max="20" placeholder="canvas size" id="canvasSize" class="input input-bordered" name="input">
+            <input type="button" onclick="makeCanvas();" value="getValue">
+        </div>
+    </div>
+        <div class="dot_template flex-auto">
+            <p> <center><h3><font size="20" color="black">Canvas </font></h3></center></p>
+            <div class="flex">
+                <div class="flex-auto">
+                    <input type='text' id="preferredHex" />
+                </div>
+                <div id="board" class="flex-auto" >
                 </div>
             </div>
         </div>
-    </div>
     <script>
 
         $(function(){
@@ -77,12 +68,12 @@
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
 
-            let myTable = $("<table id=\"our_table\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
+            let myTable = $("<table cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
                 let myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {
                     // myRow.append("<td class=\"pixleColorSet\">" + num + "</td>");
-                    myRow.append("<td class=\"pixleColorSet\" onClick=\"getInputValue\"></td>");
+                    myRow.append("<td class=\"pixleColorSet border\" onClick=\"getInputValue\"></td>");
                     num++;
                 }
             }
