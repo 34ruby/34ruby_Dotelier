@@ -1,22 +1,40 @@
+
 <x-app-layout>
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <h2>
             {{ __('Dashboard') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
+
     <div class="form-control">
         <div class="input-group">
             <input type="number" min="10" max="20" placeholder="canvas size" id="canvasSize" class="input input-bordered" name="input">
             <input type="button" onclick="makeCanvas();" value="getValue">
         </div>
     </div>
-        <div class="dot_template flex-auto">
-            <p> <center><h3><font size="20" color="black">Canvas </font></h3></center></p>
-            <div class="flex">
-                <div class="flex-auto">
-                    <input type='text' id="preferredHex" />
+        <div class="dot_template flex-auto items-center">
+            <div class="flex w-4/6 ">
+                <div class="flex-auto w-2/5 content-center m-24">
+                    <div class="flex justify-center items-center flex-col space-y-4">
+                        <input type='text' id="preferredHex" " />
+                        <div>
+                            <div>
+                                <div class="grid w-32 h-32 bg-base-300 place-items-center m-4">미리보기</div>
+                                {{-- <div class="btn-group">
+                                    <button class="btn">크게보기</button>
+                                    <button class="btn">로컬 저장</button>
+                                    <button class="btn">커뮤니티 업로드</button>
+                                </div> --}}
+                                <label for="preview-modal" class="btn modal-button">미리보기</label>
+                                <label for="save-modal" class="btn modal-button">로컬에 저장하기</label>
+                                <label for="upload-modal" class="btn modal-button">커뮤니티에 업로드하기</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="board" class="flex-auto" >
+                <div class=" w-3/5">
+                    <div id="board" class="flex-auto flex  justify-center items-center" >
+                    </div>
                 </div>
             </div>
         </div>

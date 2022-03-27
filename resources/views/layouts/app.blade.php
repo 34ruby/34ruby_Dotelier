@@ -25,16 +25,18 @@
         <script src="dist/iris.js"></script> --}}
 
     </head>
+    <input type="checkbox" id="preview-modal" class="modal-toggle">
+    @include('modals.dashboard-modal')
     <body>
         <div >
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            <header>
+            {{-- <header>
                 <div>
                     {{ $header }}
                 </div>
-            </header>
+            </header> --}}
 
             <!-- Page Content -->
             <main>

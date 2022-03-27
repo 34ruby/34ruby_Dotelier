@@ -43,7 +43,7 @@
         localStorageKey: false,
         appendTo: "body",
         maxSelectionSize: 7,
-        cancelText: "cancel",
+        cancelText: "eraser",
         chooseText: "choose",
         togglePaletteMoreText: "more",
         togglePaletteLessText: "less",
