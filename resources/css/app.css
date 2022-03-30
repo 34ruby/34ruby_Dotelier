@@ -2,33 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-#our_table {
-    width:200px;
-    height:200px;
-    text-align:center;
-    vertical-align:middle;
-    background-color:#ccc;
-    border:1px solid #fff;
-  }
-
-  table td.highlighted {
-    background-color:#999;
-  }
-
-/* td {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    text-align: center;
-    border: 2px solid blue;
-} */
-
-.redborder {
-    background-color: red;
-    color: white;
-}
-
-.blueborder {
-    background-color: blue;
-    color: white;
-}

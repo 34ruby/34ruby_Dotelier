@@ -12,28 +12,23 @@
             <input type="button" onclick="makeCanvas();" value="getValue">
         </div>
     </div>
-        <div class="dot_template flex-auto items-center">
-            <div class="flex w-4/6 ">
-                <div class="flex-auto w-2/5 content-center m-24">
+        <div class="dot_template flex-auto items-center ">
+            <div class="flex bg-slate-200">
+                <div class="flex-auto w-2/5 content-center m-24 bg-black">
                     <div class="flex justify-center items-center flex-col space-y-4">
-                        <input type='text' id="preferredHex" " />
+                        <input type='text' id="preferredHex"  />
                         <div>
                             <div>
                                 <div class="grid w-32 h-32 bg-base-300 place-items-center m-4">미리보기</div>
-                                {{-- <div class="btn-group">
-                                    <button class="btn">크게보기</button>
-                                    <button class="btn">로컬 저장</button>
-                                    <button class="btn">커뮤니티 업로드</button>
-                                </div> --}}
                                 <label for="preview-modal" class="btn modal-button">미리보기</label>
-                                <label for="save-modal" class="btn modal-button">로컬에 저장하기</label>
+                                <label id="btnSave" class="btn modal-button">로컬에 저장하기</label>
                                 <label for="upload-modal" class="btn modal-button">커뮤니티에 업로드하기</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class=" w-3/5">
-                    <div id="board" class="flex-auto flex  justify-center items-center" >
+                <div class=" w-3/5 bg-slate-100">
+                    <div id="board" class="flex-auto flex  justify-center self-center" >
                     </div>
                 </div>
             </div>
