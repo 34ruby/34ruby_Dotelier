@@ -1,32 +1,22 @@
-<input type="checkbox" id="preview-modal" class="modal-toggle">
-<div class="modal">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-    <div class="modal-action">
-      <label for="preview-modal" class="btn">Yayㄴ!</label>
-    </div>
-  </div>
-</div>
-
-<input type="checkbox" id="save-modal" class="modal-toggle">
-<div class="modal">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-    <div class="modal-action">
-      <label for="save-modal" class="btn">Yady!</label>
-    </div>
-  </div>
-</div>
-
 <input type="checkbox" id="upload-modal" class="modal-toggle">
 <div class="modal">
   <div class="modal-box">
-    <h3 class="font-bold text-lg">Congratulations random Interner user!</h3>
-    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+    <h3 class="font-bold text-lg">미리보기</h3>
+    <p class="py-4">실제 업로드 작업물은 다음과 같이 생성 될 예정입니다. 작업물은 로컬에 다운로드 하거나 커뮤니티에 올릴 수 있습니다.</p>
+    <div id="preview-canvass">
+    </div>
     <div class="modal-action">
-      <label for="upload-modal" class="btn">Yasy!</label>
+      <label for="upload-modal" class="btn" onclick="borderCreate();">돌아가기</label>
     </div>
   </div>
 </div>
+<script>
+
+function borderCreate() {
+    $("td").addClass( "border" );
+    $("td").removeClass( "border-transparent" );
+    clearCanvas()
+}
+
+
+</script>

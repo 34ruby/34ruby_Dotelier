@@ -20,6 +20,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
         <script src="{{ asset('js/spectrum.js') }}" defer></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         {{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="dist/iris.js"></script> --}}

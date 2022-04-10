@@ -19,16 +19,18 @@
                         <input type='text' id="preferredHex"  />
                         <div>
                             <div>
-                                <div class="grid w-32 h-32 bg-base-300 place-items-center m-4">미리보기</div>
-                                <label for="preview-modal" class="btn modal-button">미리보기</label>
-                                <label id="btnSave" class="btn modal-button">로컬에 저장하기</label>
-                                <label for="upload-modal" class="btn modal-button">커뮤니티에 업로드하기</label>
+                                {{-- <div class="grid w-32 h-32 bg-base-300 place-items-center m-4">미리보기</div>
+                                <button id="fff">dd</button>
+                                <label for="preview-modal" class="btn modal-button" onclick="borderDelete();" >미리보기</label>
+                                <label id="btnSave" class="btn modal-button">로컬에 저장하기</label> --}}
+                                <label for="upload-modal" class="btn modal-button" onclick="borderDelete();">미리보기</label>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class=" w-3/5 bg-slate-100">
-                    <div id="board" class="flex-auto flex  justify-center self-center" >
+                <div class="flex-auto w-3/5 bg-slate-100 content-center">
+                    <div id="board" class="flex self-center justify-center" >
                     </div>
                 </div>
             </div>
@@ -75,15 +77,40 @@
                 }
             }
         }
+        // var canvas = ''
+        // var context=''
+        function borderDelete() {
+            createDiv()
+            $("td").addClass( "border-transparent" );
+            $("td").removeClass( "border" );
+            html2canvas(document.querySelector("#ff")).then(canvas => {
+            document.getElementById('preview-canvass').appendChild(canvas)
+            canvas.getContext('2d');
+            // $("canvas").addClass( "preview-canvas" );
+            $("canvas").attr('id', 'preview-canvas');
+            });
+        }
+        function createDiv() {
+            let divs = document.createElement('div');
+            divs.classList.add('test');
+            document.body.appendChild(divs)
+            $divs.attr('id', 'dfsdf')
+        }
+        function deleteDiv() {
+        const div = document.getElementById('preview-canvass');
+        div.remove();
+        }
 
+        let myTable = ''
+        let myRow = ''
         function printBoard(i_BoardSize) {
             let maxRow = parseInt(i_BoardSize);
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
 
-            let myTable = $("<table cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
+            myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
-                let myRow = $("<tr></tr>").appendTo(myTable);
+                 myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {
                     // myRow.append("<td class=\"pixleColorSet\">" + num + "</td>");
                     myRow.append("<td class=\"pixleColorSet border\" onClick=\"getInputValue\"></td>");
