@@ -36,7 +36,6 @@
             </div>
         </div>
     <script>
-
         $(function(){
             $("#preferredHex").spectrum({
                 preferredFormat: "hex",
@@ -46,8 +45,6 @@
                 palette: [["red", "rgb(0, 255, 0)", "rgb(0, 0, 255)"]]
             });
             // let colorSet = '#000000'
-
-
             $(document.body).delegate('.pixleColorSet', 'click', function() {
                 colorSet = $('#preferredHex').val();
                 console.log(colorSet)
@@ -58,11 +55,9 @@
         let colorSet = '';
         let boardSize = 0;
         let createdCanvas = false;
-
         function getInputValue() {
             colorSet = $('#preferredHex').val();
         }
-
         function makeCanvas() { //on load
             if(createdCanvas == true) {
                 alert('이미 생성됨')
@@ -90,24 +85,23 @@
             $("canvas").attr('id', 'preview-canvas');
             });
         }
+        let divs = ''
         function createDiv() {
-            let divs = document.createElement('div');
-            divs.classList.add('test');
-            document.body.appendChild(divs)
-            $divs.attr('id', 'dfsdf')
+            divs = document.createElement('div');
+            divs.classList.add('w-1/5');
+            document.getElementById('preview-modal2').appendChild(divs)
+            divs.id = 'preview-canvass';
         }
         function deleteDiv() {
-        const div = document.getElementById('preview-canvass');
-        div.remove();
+        divs = document.getElementById('preview-canvass');
+        divs.remove();
         }
-
         let myTable = ''
         let myRow = ''
         function printBoard(i_BoardSize) {
             let maxRow = parseInt(i_BoardSize);
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
-
             myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
                  myRow = $("<tr></tr>").appendTo(myTable);
