@@ -23,7 +23,7 @@
                                 <button id="fff">dd</button>
                                 <label for="preview-modal" class="btn modal-button" onclick="borderDelete();" >미리보기</label>
                                 <label id="btnSave" class="btn modal-button">로컬에 저장하기</label> --}}
-                                <label for="upload-modal" class="btn modal-button" onclick="borderDelete();">미리보기</label>
+                                <label for="my-modal-5" class="btn modal-button" onclick="borderDelete();">미리보기</label>
 
                             </div>
                         </div>
@@ -88,7 +88,7 @@
         let divs = ''
         function createDiv() {
             divs = document.createElement('div');
-            divs.classList.add('w-1/5');
+            // divs.classList.add('w-1/5');
             document.getElementById('preview-modal2').appendChild(divs)
             divs.id = 'preview-canvass';
         }
