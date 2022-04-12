@@ -83,6 +83,10 @@
             canvas.getContext('2d');
             // $("canvas").addClass( "preview-canvas" );
             $("canvas").attr('id', 'preview-canvas');
+
+            var changeStyle = document.getElementById("preview-canvas")
+            changeStyle.style.width="400px"
+            changeStyle.style.height="400px"
             });
         }
         let divs = ''
@@ -91,6 +95,7 @@
             // divs.classList.add('w-1/5');
             document.getElementById('preview-modal2').appendChild(divs)
             divs.id = 'preview-canvass';
+            // divs.class = 'border-8'
         }
         function deleteDiv() {
         divs = document.getElementById('preview-canvass');
@@ -102,7 +107,7 @@
             let maxRow = parseInt(i_BoardSize);
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
-            myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"600px\" width=\"600px\"></table>").appendTo("#board");
+            myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"500px\" width=\"500px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
                  myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {

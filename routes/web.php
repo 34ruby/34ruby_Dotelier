@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PhotosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +21,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/gallery', function () {
-    return view('gallery');
-})->middleware(['auth'])->name('gallery');
+Route::resource('/photos', PhotosController::class);
 
 require __DIR__.'/auth.php';
