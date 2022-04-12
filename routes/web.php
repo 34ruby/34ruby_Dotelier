@@ -21,6 +21,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/photos', PhotosController::class);
+Route::resource('/photos', PhotosController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
