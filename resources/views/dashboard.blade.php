@@ -6,6 +6,7 @@
         </h2>
     </x-slot> --}}
 
+
     <div class="form-control">
         <div class="input-group">
             <input type="number" min="10" max="20" placeholder="canvas size" id="canvasSize" class="input input-bordered" name="input">
@@ -19,12 +20,8 @@
                         <input type='text' id="preferredHex"  />
                         <div>
                             <div>
-                                {{-- <div class="grid w-32 h-32 bg-base-300 place-items-center m-4">미리보기</div>
-                                <button id="fff">dd</button>
-                                <label for="preview-modal" class="btn modal-button" onclick="borderDelete();" >미리보기</label>
-                                <label id="btnSave" class="btn modal-button">로컬에 저장하기</label> --}}
+                                <label for="my-modal" class="btn modal-button2">캔버스 생성하기</label>
                                 <label for="my-modal-5" class="btn modal-button" onclick="borderDelete();">미리보기</label>
-
                             </div>
                         </div>
                     </div>
@@ -36,6 +33,8 @@
             </div>
         </div>
     <script>
+
+
         $(function(){
             $("#preferredHex").spectrum({
                 preferredFormat: "hex",
@@ -58,6 +57,7 @@
         function getInputValue() {
             colorSet = $('#preferredHex').val();
         }
+
         function makeCanvas() { //on load
             if(createdCanvas == true) {
                 alert('이미 생성됨')
@@ -107,7 +107,7 @@
             let maxRow = parseInt(i_BoardSize);
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
-            myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"500px\" width=\"500px\"></table>").appendTo("#board");
+            myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"735px\" width=\"735px\" padding=\"10px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
                  myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {

@@ -1,5 +1,5 @@
 <input type="checkbox" id="my-modal-5" class="modal-toggle">
-<div class="modal ">
+<div class="modal">
   <div class="modal-box">
 
     <h3 class="font-bold text-lg">미리보기</h3>

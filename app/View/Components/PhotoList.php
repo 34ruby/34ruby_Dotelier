@@ -12,7 +12,7 @@ class PhotoList extends Component
      * @return void
      */
 
-    public $name = "34ruby";
+    // public $name = "34ruby";
 
     public $photos;
 
