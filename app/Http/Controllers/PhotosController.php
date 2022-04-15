@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PhotosController extends Controller
 {
@@ -14,7 +16,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        $photos = Photo::all();
+        $photos = Photo::latest()->paginate(10);
 
         // dd($photos);
         return view('photos.index', ['photos'=>$photos]);
@@ -38,7 +40,20 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $path = $request->file('file')->store(
+            '34rubydotelier', 's3'
+        );
+
+        Storage::disk('s3')->setVisibility($path, 'public');
+
+        $image = Photo::create([
+            'filename' => basename($path),
+            'url' => Storage::disk('s3')->url($path),
+            'title'=> $request->title,
+            'user_id' => Auth::user()->id,
+        ]);
+        // Picture::find($id);
+        return redirect('/pictures');
     }
 
     /**
@@ -47,9 +62,9 @@ class PhotosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Photo $photo)
     {
-        //
+        return $photo->url;
     }
 
     /**

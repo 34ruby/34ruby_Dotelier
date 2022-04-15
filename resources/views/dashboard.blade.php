@@ -20,7 +20,7 @@
                         <input type='text' id="preferredHex"  />
                         <div>
                             <div>
-                                <label for="my-modal" class="btn modal-button2">캔버스 생성하기</label>
+                                {{-- <label for="my-modal" class="btn modal-button2">캔버스 생성하기</label> --}}
                                 <label for="my-modal-5" class="btn modal-button" onclick="borderDelete();">미리보기</label>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
             createDiv()
             $("td").addClass( "border-transparent" );
             $("td").removeClass( "border" );
-            html2canvas(document.querySelector("#ff")).then(canvas => {
+            html2canvas(document.querySelector("#fff")).then(canvas => {
             document.getElementById('preview-canvass').appendChild(canvas)
             canvas.getContext('2d');
             // $("canvas").addClass( "preview-canvas" );
@@ -107,7 +107,7 @@
             let maxRow = parseInt(i_BoardSize);
             let maxCol = parseInt(i_BoardSize);
             let num = 1;
-            myTable = $("<table id=\"ff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"735px\" width=\"735px\" padding=\"10px\"></table>").appendTo("#board");
+            myTable = $("<table id=\"fff\" cellpadding=\"0\" cellspacing=\"0\" oncontextmenu=\"return false\" height=\"735px\" width=\"735px\" padding=\"10px\"></table>").appendTo("#board");
             for (let row = maxRow - 1; row >= 0; row--) {
                  myRow = $("<tr></tr>").appendTo(myTable);
                 for (let col = 0; col < maxCol; col++) {

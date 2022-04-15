@@ -17,7 +17,7 @@ class PhotoFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'image' => $this->faker->imageUrl(360, 240, 'cats'),
+            'image' => $this->faker->imageUrl(240, 240, 'cats'),
             'user_id' => 1,
         ];
     }
